@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Card } from '@/components/ui/card';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Card } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { ExternalLink, Github, ArrowRight, Cat, Globe } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+} from "@/components/ui/dialog";
+import { ExternalLink, Github, ArrowRight, Cat, Globe } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export interface ProjectCardProps {
   title: string;
@@ -22,7 +22,7 @@ export interface ProjectCardProps {
     demo: string;
     repo: string;
   };
-  status: 'Working' | 'Building';
+  status: "Working" | "Building";
   icons: React.FC<React.SVGProps<SVGSVGElement>>[];
   video?: string;
 }
@@ -39,7 +39,7 @@ export function ProjectCard({
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
   return (
-    <Card className="group flex h-full flex-col justify-between overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md p-0 gap-0 dark:border-[#2a2a2a] dark:bg-[#171717] dark:hover:bg-[#1f1f1f] dark:hover:shadow-xl">
+    <Card className="group flex h-full flex-col justify-between overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md p-0 gap-0 dark:border-[#2a2a2a] dark:bg-[#171717]">
       <div className="relative aspect-video w-full overflow-hidden rounded-t-xl bg-muted dark:bg-[#1a1a1a]">
         <Image
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -48,16 +48,14 @@ export function ProjectCard({
           width={1920}
           height={1080}
         />
-        
-
         {video && (
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
             <DialogTrigger asChild>
               <div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/40 opacity-100 transition-opacity duration-300 hover:bg-black/50 group-hover:backdrop-blur-[2px]">
                 <button className="group/play flex size-16 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-white/20">
                   <div className="relative ml-1">
-                      <div className="absolute inset-0 animate-ping rounded-full bg-white/20 opacity-0 group-hover/play:opacity-100" />
-                      <div className="border-y-[10px] border-l-[16px] border-y-transparent border-l-white" />
+                    <div className="absolute inset-0 animate-ping rounded-full bg-white/20 opacity-0 group-hover/play:opacity-100" />
+                    <div className="border-y-10 border-l-16 border-y-transparent border-l-white" />
                   </div>
                 </button>
               </div>
@@ -101,7 +99,7 @@ export function ProjectCard({
                   href={links.repo}
                   target="_blank"
                 >
-                  <Cat className="size-5" />
+                  <Github className="size-5" />
                   <span className="sr-only">Repo</span>
                 </Link>
               )}
@@ -118,7 +116,10 @@ export function ProjectCard({
             </h4>
             <div className="flex flex-wrap gap-3">
               {icons.map((Icon, index) => (
-                <div key={index} className="text-foreground hover:text-primary transition-colors dark:text-white">
+                <div
+                  key={index}
+                  className="text-foreground hover:text-primary transition-colors dark:text-white"
+                >
                   <Icon className="size-5" />
                 </div>
               ))}
@@ -127,12 +128,14 @@ export function ProjectCard({
         </div>
 
         <div className="mt-6 flex items-center justify-between">
-          <Badge 
-            variant="outline" 
+          <Badge
+            variant="outline"
             className={`flex items-center gap-2 border-0 bg-green-500/10 px-3 py-1.5 text-xs font-medium text-green-600 dark:bg-[#0c2b15] dark:text-[#22c55e]`}
           >
             <span className="size-2 animate-pulse rounded-full bg-green-500 dark:bg-[#22c55e]" />
-            {status === 'Working' ? 'All Systems Operational' : 'Under Development'}
+            {status === "Working"
+              ? "All Systems Operational"
+              : "Under Development"}
           </Badge>
 
           <Link
