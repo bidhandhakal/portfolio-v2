@@ -136,3 +136,11 @@
   src: url('/fonts/HankenGrotesk-Italic-Variable.ttf') format('truetype');
   font-style: italic;
 }
+
+.skill-inner-shadow {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .skill-inner-shadow {
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+}

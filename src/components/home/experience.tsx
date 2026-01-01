@@ -1,11 +1,32 @@
 'use client';
 
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
+import {
+  NextJsIcon,
+  TypeScriptIcon,
+  TailwindIcon,
+  PrismaIcon,
+  ReactIcon,
+  NodeJsIcon,
+  AppwriteIcon,
+} from "@/components/technologies";
+
+const TECH_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Next.js": NextJsIcon,
+  "TypeScript": TypeScriptIcon,
+  "Tailwind CSS": TailwindIcon,
+  "Prisma": PrismaIcon,
+  "React": ReactIcon,
+  "Node.js": NodeJsIcon,
+  "Appwrite": AppwriteIcon,
+};
 
 const EXPERIENCES = [
+// ... (rest of the file until the map loop)
+// I'll use multi_replace to handle imports and the loop separately to be safer/cleaner
+
   {
     company: "Luxera",
     role: "Full Stack Developer",
@@ -21,16 +42,16 @@ const EXPERIENCES = [
     period: "Jan 2023 - Present",
     location: "Remote",
     status: "Freelance",
-    logo: "",
+    logo: " ",
     tech: ["React", "Next.js", "Node.js", "Appwrite"],
   }
 ];
 
 export function Experience() {
   return (
-    <section className="py-12">
-      <h2 className="text-sm font-medium text-muted-foreground mb-6 uppercase tracking-wider">Featured Experience</h2>
-      <h3 className="text-2xl font-bold mb-8">Experience</h3>
+    <section className="py-8">
+      <h2 className="text-sm font-medium text-muted-foreground mb-1 tracking-wider">Featured</h2>
+      <h3 className="text-2xl font-bold mb-5">Experience</h3>
       
       <div className="space-y-8">
         {EXPERIENCES.map((exp, index) => (
@@ -62,14 +83,17 @@ export function Experience() {
              </div>
 
              <div className="pl-[3.5rem]">
-                 <p className="text-sm font-medium mb-2 text-muted-foreground">Technologies & Tools</p>
+                 <p className="text-md font-medium mb-2">Technologies & Tools</p>
                  <div className="flex flex-wrap gap-2">
-                    {exp.tech.map((t) => (
-                        <Badge key={t} variant="secondary" className="font-normal text-xs bg-muted text-muted-foreground hover:bg-muted hover:text-foreground">
-                            {/* Optional icons could go here */}
-                             {t}
-                        </Badge>
-                    ))}
+                    {exp.tech.map((t) => {
+                        const Icon = TECH_ICONS[t];
+                        return (
+                          <a key={t} className="inline-flex items-center text-sm font-semibold  bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white">
+                              {Icon && <Icon className="size-4.5 mr-1" />}
+                              {t}
+                          </a>
+                        )
+                    })}
                  </div>
              </div>
           </div>
