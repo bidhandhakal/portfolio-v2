@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { FileText, Mail, Github, Youtube, YoutubeIcon, LucideYoutube } from "lucide-react";
+import {
+  FileText,
+  Mail,
+  Github,
+  Youtube,
+  YoutubeIcon,
+  LucideYoutube,
+} from "lucide-react";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -27,27 +34,24 @@ export function Hero() {
           </div>
         </div>
 
-
-
-
-
-{/* // about div */}
+        {/* // about div */}
         <div className="space-y-4">
-          <h1 className="text-3xl light:text-[#323C4C] dark:text-[#8EC5FF] font-bold tracking-tight md:text-4xl">
-            Hi, I'm Bidhan. <span className="text-[#808C92]">A Full-stack Developer.</span>
+          <h1 className="text-3xl text-[#354051] dark:text-[#E5E8EB] font-bold tracking-tight md:text-4xl">
+            Hi, I'm Bidhan.{" "}
+            <span className="text-[#919394] dark:text-[#9D9492]">
+              A Full-stack Developer.
+            </span>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
             I'm a passionate web developer
-
-
-
-            <a href="https://www.typescriptlang.org/" target="_blank" className="inline-flex items-center text-sm font-semibold  bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white">
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              className="inline-flex items-center text-sm font-semibold  bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
+            >
               <TypeScriptIcon className="size-4 mr-1" />
               TypeScript
             </a>
-
-
-
             with expertise in creating modern, responsive web applications. I
             love working with cutting-edge technologies and crafting seamless
             user experiences. Specializing in{" "}
@@ -57,12 +61,12 @@ export function Hero() {
           </p>
         </div>
 
-
-
-
-
         <div className="flex flex-wrap gap-4">
-          <Button variant="outline" className="gap-2" asChild>
+          <Button
+            variant="outline"
+            className="border border-border/50 bg-secondary/50 hover:bg-secondary/80 shadow-[inset_0_2px_0_0_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
+            asChild
+          >
             <Link
               href="https://www.bidhandhakal.com.np/images/resumebidhan.pdf"
               target="_blank"
