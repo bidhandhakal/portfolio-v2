@@ -1,7 +1,10 @@
 "use client";
-
-import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import {
   NextJsIcon,
@@ -12,6 +15,7 @@ import {
   NodeJsIcon,
   AppwriteIcon,
 } from "@/components/technologies";
+import { Github, Globe, Instagram } from "lucide-react";
 
 const TECH_ICONS: Record<
   string,
@@ -27,9 +31,6 @@ const TECH_ICONS: Record<
 };
 
 const EXPERIENCES = [
-  // ... (rest of the file until the map loop)
-  // I'll use multi_replace to handle imports and the loop separately to be safer/cleaner
-
   {
     company: "gooddday",
     role: "Full Stack Developer",
@@ -38,6 +39,11 @@ const EXPERIENCES = [
     status: "Working",
     logo: "/experiences/image.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
+    links: [
+      { name: "Website", url: "https://gooddday.com", icon: Globe },
+      { name: "GitHub", url: "https://github.com", icon: Github },
+      { name: "Instagram", url: "https://gooddday.com/app", icon: Instagram },
+    ],
   },
   {
     company: "Freelance",
@@ -47,15 +53,14 @@ const EXPERIENCES = [
     status: "Freelance",
     logo: "/experiences/image.png",
     tech: ["React", "Next.js", "Node.js", "Appwrite"],
+    links: [{ name: "GitHub", url: "https://github.com", icon: Github }],
   },
 ];
 
 export function Experience() {
   return (
     <section className="py-8">
-      <h2 className="text-sm font-medium text-muted-foreground mb-1 tracking-wider">
-        Featured
-      </h2>
+      <p className="text-neutral-400 whitespace-pre-wrap text-sm">Featured</p>
       <h3 className="text-2xl font-bold mb-5">Experience</h3>
 
       <div className="space-y-8">
@@ -69,7 +74,28 @@ export function Experience() {
                 </Avatar>
                 <div>
                   <h4 className="font-bold text-lg flex items-center gap-2">
-                    {exp.company}
+                    {exp.company}{" "}
+                    {exp.links && (
+                      <div className="flex gap-2 ml-0.1">
+                        {exp.links.map((link) => (
+                          <Tooltip key={link.name}>
+                            <TooltipTrigger asChild>
+                              <a
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-muted-foreground hover:text-foreground transition-colors"
+                              >
+                                <link.icon className="size-4" />
+                              </a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{link.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        ))}
+                      </div>
+                    )}
                     {exp.status === "Working" && (
                       <div className="flex items-center gap-1 rounded-md border-green-300 bg-green-500/10 px-2 py-1 text-xs">
                         <div className="size-2 rounded-full bg-green-500 animate-pulse"></div>

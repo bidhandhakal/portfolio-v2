@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import image from "next/image";
 import {
   ThemeToggleButton,
   useThemeTransition,
@@ -37,11 +38,12 @@ export function Header() {
       <div className="container flex h-20 items-center justify-between mx-auto md:px-24 px-6 max-w-4xl">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2">
-            <Avatar className="h-13 w-13 rounded-md border border-border/50">
+            <Avatar className="size-13 rounded-md border border-border/50">
               <AvatarImage
-                src="https://github.com/bidhandhakal.png"
+                src="/avatars/avatar.png"
+                loading="lazy"
                 alt="@bidhandhakal"
-                className="rounded-md"
+                className="size-13 rounded-md border border-gray-200 bg-blue-300 dark:bg-yellow-300 [@media(hover:hover)_and_(pointer:fine)]:transition-transform [@media(hover:hover)_and_(pointer:fine)]:duration-200 [@media(hover:hover)_and_(pointer:fine)]:ease-[ease] [@media(hover:hover)_and_(pointer:fine)]:hover:scale-90 [@media(hover:hover)_and_(pointer:fine)]:will-change-transform"
               />
               <AvatarFallback className="rounded-md">BD</AvatarFallback>
             </Avatar>
@@ -90,11 +92,13 @@ export function Header() {
             </KbdGroup>
           </Button>
 
+          {/* theme toggle button */}
+
           <ThemeToggleButton
             theme={resolvedTheme === "dark" ? "dark" : "light"}
             variant="circle-blur"
             start={resolvedTheme === "dark" ? "bottom-left" : "top-right"}
-            className="border border-border/50 bg-secondary/50 hover:bg-secondary/80 h-10 w-10 shadow-[inset_0_2px_0_0_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
+            className="border border-border/50 bg-secondary/50 hover:bg-secondary/80 h-10 w-10 shadow-[inset_0_2px_0_0_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] active:scale-95 transition-transform"
             onClick={() => {
               startTransition(() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")

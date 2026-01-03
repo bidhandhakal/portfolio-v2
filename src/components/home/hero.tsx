@@ -8,6 +8,7 @@ import {
   Youtube,
   YoutubeIcon,
   LucideYoutube,
+  Instagram,
 } from "lucide-react";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -16,21 +17,21 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { PostgreSQLIcon, TypeScriptIcon } from "@/components/technologies";
+import { TypeScriptIcon } from "@/components/technologies";
 export function Hero() {
   return (
     <section className="py-12 md:py-10">
       <div className="flex flex-col gap-8">
         <div className="flex items-center gap-4">
-          <div className="relative h-20 w-20 md:h-26 md:w-26 overflow-hidden rounded-full border-2 border-border">
+          <div className="size-24 rounded-full dark:bg-yellow-300 bg-blue-300">
             <Avatar className="h-full w-full">
               <AvatarImage
-                src="https://github.com/bidhandhakal.png"
+                src="/avatars/avatar.png"
                 alt="Avatar"
+                loading="lazy"
               />
               <AvatarFallback>BD</AvatarFallback>
             </Avatar>
-            {/* Status indicator if needed */}
           </div>
         </div>
 
@@ -42,23 +43,33 @@ export function Hero() {
               A Full-stack Developer.
             </span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            I'm a passionate web developer
-            <a
-              href="https://www.typescriptlang.org/"
-              target="_blank"
-              className="inline-flex items-center text-sm font-semibold  bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-            >
-              <TypeScriptIcon className="size-4 mr-1" />
-              TypeScript
-            </a>
-            with expertise in creating modern, responsive web applications. I
-            love working with cutting-edge technologies and crafting seamless
-            user experiences. Specializing in{" "}
-            <span className="font-semibold text-foreground">React</span>,{" "}
-            <span className="font-semibold text-foreground">Next.js</span>, and{" "}
-            <span className="font-semibold text-foreground">Three.js</span>.
-          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base md:text-lg text-neutral-500 whitespace-pre-wrap leading-10">
+            <p className="whitespace-pre-wrap">
+              I'm a passionate web developer
+              <a
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                className="inline-flex items-center text-sm font-semibold bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white mx-2"
+              >
+                <TypeScriptIcon className="size-4 mr-1" />
+                TypeScript
+              </a>
+              with expertise in creating modern, responsive
+              <a
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                className="inline-flex items-center text-sm font-semibold bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white mx-2"
+              >
+                <TypeScriptIcon className="size-4 mr-1" />
+                TypeScript
+              </a>
+              web applications. I love working with cutting-edge technologies{" "}
+              <span className="font-semibold text-foreground">React</span>,{" "}
+              <span className="font-semibold text-foreground">Next.js</span>,
+              and{" "}
+              <span className="font-semibold text-foreground">Three.js</span>.
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-4">
@@ -76,13 +87,14 @@ export function Hero() {
             </Link>
           </Button>
           <Button className="gap-2" asChild>
-            <Link href="mailto:bidhandhakal365@gmail.com">
+            <Link href="/contact">
               <Mail className="h-4 w-4" />
               Get in touch
             </Link>
           </Button>
         </div>
 
+        {/* social links */}
         <div className="flex gap-3 text-muted-foreground">
           <Tooltip>
             <TooltipTrigger asChild>
@@ -151,7 +163,7 @@ export function Hero() {
             <TooltipTrigger asChild>
               <Link
                 target="_blank"
-                href="https://github.com/bidhandhakal"
+                href="https://youtube.com/@bidhanxcodes"
                 className="hover:text-foreground transition-colors"
               >
                 <LucideYoutube className="size-5" />
@@ -159,6 +171,36 @@ export function Hero() {
             </TooltipTrigger>
             <TooltipContent>
               <p>YouTube</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                target="_blank"
+                href="https://instagram.com/bidhanxcode"
+                className="hover:text-foreground transition-colors"
+              >
+                <Instagram className="size-5" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>YouTube</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                target="_blank"
+                href="mailto:bidhandhakal365@gmail.com"
+                className="hover:text-foreground transition-colors"
+              >
+                <Mail className="size-5" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Mail</p>
             </TooltipContent>
           </Tooltip>
         </div>
