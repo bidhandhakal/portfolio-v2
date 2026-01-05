@@ -12,7 +12,7 @@ export function Footer() {
           >
             Bidhan
           </a>
-          . The source code is available on{" "}
+          . The site is still under development. Check out the source code on{" "}
           <a
             href="https://github.com/bidhandhakal"
             target="_blank"
