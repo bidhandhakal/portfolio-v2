@@ -22,18 +22,32 @@ export function Hero() {
   return (
     <section className="py-12 md:py-10">
       <div className="flex flex-col gap-8">
-        <div className="flex items-center gap-4">
-          <div className="size-24 rounded-full dark:bg-yellow-300 bg-blue-300">
-            <Avatar className="h-full w-full">
-              <AvatarImage
-                src="/avatars/avatar.png"
-                alt="Avatar"
-                loading="lazy"
-              />
-              <AvatarFallback>BD</AvatarFallback>
-            </Avatar>
+        {/* Banner Image */}
+        <div className="relative w-full">
+          <div className="h-32 md:h-48 w-full rounded-xl overflow-hidden bg-linear-to-r from-blue-500 via-purple-500 to-pink-500">
+            <img
+              src="/experiences/banner.jpg"
+              alt="Profile Banner"
+              className="w-full h-full object-cover opacity-90"
+            />
+          </div>
+          {/* Avatar positioned to overlap banner */}
+          <div className="absolute -bottom-12 left-4 md:left-8">
+            <div className="size-24 md:size-28 rounded-full dark:bg-yellow-300 bg-blue-300 border-4 border-background">
+              <Avatar className="h-full w-full">
+                <AvatarImage
+                  src="/avatars/avatar.png"
+                  alt="Avatar"
+                  loading="lazy"
+                />
+                <AvatarFallback>BD</AvatarFallback>
+              </Avatar>
+            </div>
           </div>
         </div>
+
+        {/* Spacer for avatar overlap */}
+        <div className="h-12"></div>
 
         {/* // about div */}
         <div className="space-y-4">
