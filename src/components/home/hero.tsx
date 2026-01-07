@@ -113,7 +113,7 @@ export function Hero() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="https://x.com/bidxu51334"
+                href="https://x.com/bidhanxcode"
                 target="_blank"
                 className="hover:text-foreground transition-colors"
               >
