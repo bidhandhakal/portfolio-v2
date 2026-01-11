@@ -1,7 +1,8 @@
-import { Header } from '@/components/layout/header';
-import { Hero } from '@/components/home/hero';
-import { Experience } from '@/components/home/experience';
-import { Footer } from '@/components/layout/footer';
+import { Header } from "@/components/layout/header";
+import { Hero } from "@/components/home/hero";
+import { Experience } from "@/components/home/experience";
+import { GitHubActivity } from "@/components/home/github-activity";
+import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
   return (
@@ -9,8 +10,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <div className="container mx-auto max-w-4xl px-6 md:px-24 py-8">
-            <Hero />
-            <Experience />
+          <Hero />
+          <GitHubActivity />
+          <Experience />
         </div>
       </main>
       <Footer />
