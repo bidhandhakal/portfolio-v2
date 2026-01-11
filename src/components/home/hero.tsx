@@ -17,37 +17,28 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { TypeScriptIcon } from "@/components/technologies";
+import {
+  TypeScriptIcon,
+  ReactIcon,
+  NextJsIcon,
+  TailwindIcon,
+  NodeJsIcon,
+} from "@/components/technologies";
 export function Hero() {
   return (
     <section className="py-12 md:py-10">
       <div className="flex flex-col gap-8">
-        {/* Banner Image */}
-        <div className="relative w-full">
-          <div className="h-32 md:h-48 w-full rounded-xl overflow-hidden bg-linear-to-r from-blue-500 via-purple-500 to-pink-500">
-            <img
-              src="/experiences/banner.jpg"
-              alt="Profile Banner"
-              className="w-full h-full object-cover opacity-90"
+        <div className="size-32 rounded-full dark:bg-yellow-300 bg-blue-300 flex items-center justify-center shadow-xl overflow-hidden">
+          <Avatar className="h-full w-full border-none">
+            <AvatarImage
+              src="/avatars/avatar.png"
+              alt="Avatar"
+              className="object-cover"
+              loading="lazy"
             />
-          </div>
-          {/* Avatar positioned to overlap banner */}
-          <div className="absolute -bottom-12 left-4 md:left-8">
-            <div className="size-24 md:size-28 rounded-full dark:bg-yellow-300 bg-blue-300 border-4 border-background">
-              <Avatar className="h-full w-full">
-                <AvatarImage
-                  src="/avatars/avatar.png"
-                  alt="Avatar"
-                  loading="lazy"
-                />
-                <AvatarFallback>BD</AvatarFallback>
-              </Avatar>
-            </div>
-          </div>
+            <AvatarFallback className="text-2xl font-bold">BD</AvatarFallback>
+          </Avatar>
         </div>
-
-        {/* Spacer for avatar overlap */}
-        <div className="h-12"></div>
 
         {/* // about div */}
         <div className="space-y-4">
@@ -59,7 +50,7 @@ export function Hero() {
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base md:text-lg text-neutral-500 whitespace-pre-wrap leading-10">
             <p className="whitespace-pre-wrap">
-              I'm a passionate web developer
+              Full-stack Developer building high-performance web apps with
               <a
                 href="https://www.typescriptlang.org/"
                 target="_blank"
@@ -68,20 +59,43 @@ export function Hero() {
                 <TypeScriptIcon className="size-4 mr-1" />
                 TypeScript
               </a>
-              with expertise in creating modern, responsive
+              ,
               <a
-                href="https://www.typescriptlang.org/"
+                href="https://react.dev/"
                 target="_blank"
                 className="inline-flex items-center text-sm font-semibold bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white mx-2"
               >
-                <TypeScriptIcon className="size-4 mr-1" />
-                TypeScript
+                <ReactIcon className="size-4 mr-1" />
+                React
               </a>
-              web applications. I love working with cutting-edge technologies{" "}
-              <span className="font-semibold text-foreground">React</span>,{" "}
-              <span className="font-semibold text-foreground">Next.js</span>,
-              and{" "}
-              <span className="font-semibold text-foreground">Three.js</span>.
+              , and
+              <a
+                href="https://nextjs.org/"
+                target="_blank"
+                className="inline-flex items-center text-sm font-semibold bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white mx-2"
+              >
+                <NextJsIcon className="size-4 mr-1" />
+                Next.js
+              </a>
+              . Specialized in crafting scalable systems using
+              <a
+                href="https://tailwindcss.com/"
+                target="_blank"
+                className="inline-flex items-center text-sm font-semibold bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white mx-2"
+              >
+                <TailwindIcon className="size-4 mr-1" />
+                Tailwind CSS
+              </a>
+              and
+              <a
+                href="https://nodejs.org/"
+                target="_blank"
+                className="inline-flex items-center text-sm font-semibold bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white mx-2"
+              >
+                <NodeJsIcon className="size-4 mr-1" />
+                Node.js
+              </a>
+              .
             </p>
           </div>
         </div>
@@ -113,7 +127,7 @@ export function Hero() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="https://x.com/bidhanxcode"
+                href="https://x.com/bidxu51334"
                 target="_blank"
                 className="hover:text-foreground transition-colors"
               >
@@ -177,7 +191,7 @@ export function Hero() {
             <TooltipTrigger asChild>
               <Link
                 target="_blank"
-                href="https://youtube.com/@bidhanxcodes"
+                href="https://youtube.com/@bidhanxcode"
                 className="hover:text-foreground transition-colors"
               >
                 <LucideYoutube className="size-5" />
@@ -199,7 +213,7 @@ export function Hero() {
               </Link>
             </TooltipTrigger>
             <TooltipContent>
-              <p>YouTube</p>
+              <p>Instagram</p>
             </TooltipContent>
           </Tooltip>
 
