@@ -1,6 +1,7 @@
 "use client";
 
-import { FaGithub, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaInstagram} from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
@@ -9,7 +10,7 @@ export default function Home() {
     { href: "https://x.com/bidhaan_daju", icon: <FaXTwitter />, label: "Twitter" },
     { href: "https://github.com/bidhandhakal", icon: <FaGithub />, label: "GitHub" },
     { href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon: <FaInstagram />, label: "Instagram" },
-    { href: "https://youtube.com/watch?v=dQw4w9WgXcQ", icon: <FaYoutube />, label: "YouTube" },
+    { href: "mailto:bidhandhakal365@gmail.com", icon: <FiMail />, label: "Email" }
   ];
 
   return (
