@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
-const lato = Lato({
-  subsets: ["latin"],
+const hankenGrotesk = localFont({
+  src: "../../public/font/HankenGrotesk.ttf",
   variable: "--font-sans",
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Bidhan",
+  title: "Bidhaan",
   description: "idk",
 };
 
@@ -22,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${lato.variable} h-full antialiased`}
+      className={`${hankenGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#FDFDFD]">
         {children}

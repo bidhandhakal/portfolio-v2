@@ -5,93 +5,70 @@ import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
 export default function Home() {
+  const socials = [
+    { href: "https://x.com/bidhaan_daju", icon: <FaXTwitter />, label: "Twitter" },
+    { href: "https://github.com/bidhandhakal", icon: <FaGithub />, label: "GitHub" },
+    { href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon: <FaInstagram />, label: "Instagram" },
+    { href: "https://youtube.com/watch?v=dQw4w9WgXcQ", icon: <FaYoutube />, label: "YouTube" },
+  ];
+
   return (
     <div className="bg-white min-h-screen text-gray-900 font-sans">
-      <div className="mx-auto max-w-sm sm:max-w-md pt-20 px-6 pb-20 sm:scale-120 origin-top transform">
-        {/* Avatar */}
-        <div className="mb-4">
+      <div className="mx-auto max-w-2xl pt-24 px-8 pb-20">
+
+        {/* Avatar and Name */}
+        <div className="flex flex-col gap-4 mb-5">
           <Image
             src="/photo.png"
-            width={224}
-            height={224}
-            className="w-28 h-28 object-cover rounded-full border border-gray-200"
+            width={300}
+            height={300}
+            className="w-28 h-28 object-cover rounded-full ring-2 ring-gray-200 ring-offset-2"
             alt="Bidhan"
           />
+          <div className="flex items-center">
+            <h1 className="text-lg font-bold text-gray-900">Bidhaan</h1>
+            <svg viewBox="0 0 22 22" aria-label="Verified account" role="img" className="w-5 h-5 text-blue-500 fill-current" data-testid="icon-verified" xmlns="http://www.w3.org/2000/svg"><g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g></svg>
+          </div>
         </div>
 
         {/* Intro */}
-        <h1 className="text-lg font-medium text-gray-900">Hi, I'm Bidhan.</h1>
-        <p className="text-sm text-gray-600 mb-2">
+        <p className="text-sm text-gray-500 mb-3">
           Building simple software, usually.
         </p>
 
-        {/* Now line */}
-        <p className="inline-flex text-xs mb-6">
-          <span className="text-gray-400 mr-1">↳ currently working on</span>
-          <span className="text-gray-900">something cool</span>
-        </p>
 
         {/* Socials */}
-        <div className="flex flex-wrap items-center gap-2 mb-6 text-xs">
-          <span className="text-gray-400 mr-1">Socials</span>
-          <a
-            href="https://x.com/bidhaan_daju"
-            className="border border-dashed border-gray-400 rounded-md px-2 py-1 text-gray-700 flex items-center gap-1 hover:bg-gray-50 transition-colors"
-          >
-            <FaXTwitter className="w-3 h-3" /> Twitter
-          </a>
-          <a
-            href="https://github.com/bidhandhakal"
-            className="border border-dashed border-gray-400 rounded-md px-2 py-1 text-gray-700 flex items-center gap-1 hover:bg-gray-50 transition-colors"
-          >
-            <FaGithub className="w-3 h-3" /> GitHub
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            className="border border-dashed border-gray-400 rounded-md px-2 py-1 text-gray-700 flex items-center gap-1 hover:bg-gray-50 transition-colors"
-          >
-            <FaInstagram className="w-3 h-3" /> Instagram
-          </a>
-          <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            className="border border-dashed border-gray-400 rounded-md px-2 py-1 text-gray-700 flex items-center gap-1 hover:bg-gray-50 transition-colors"
-          >
-            <FaYoutube className="w-3 h-3" /> YouTube
-          </a>
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          {socials.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors"
+            >
+              <span className="text-[14px]">{item.icon}</span>
+              {item.label}
+            </a>
+          ))}
         </div>
 
         {/* Divider */}
-        <div className="border-b border-dashed border-gray-200 my-6"></div>
-
-        {/* Projects
-        <div className="mb-8">
-          <h2 className="text-xs text-gray-400 uppercase mb-3">Projects</h2>
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">
-                  Something cooking up
-                </h3>
-                <p className="text-xs text-gray-500 mt-0.5">Cook</p>
-              </div>
-              <span className="text-xs bg-gray-100 text-gray-600 rounded-full px-2">
-                Next.js
-              </span>
-            </div>
-          </div>
-        </div> */}
+        <div className="border-t border-gray-100 my-6" />
 
         {/* Footer */}
-        <div className="mt-8 text-xs">
-          <span className="text-gray-400">say hi → </span>
+        <p className="text-sm text-gray-400">
+          say hi →{" "}
           <a
             href="https://x.com/bidhaan_daju"
-            className="text-gray-800 hover:text-black transition-colors"
+              target="_blank"
+                  rel="noopener noreferrer"
+            className="text-gray-800 font-medium hover:text-black transition-colors"
           >
             @bidhaan_daju
           </a>
-        </div>
+        </p>
+
       </div>
     </div>
   );
