@@ -4,6 +4,7 @@ import { FaGithub, FaInstagram} from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import { GitHubCalendar } from "react-github-calendar";
 
 export default function Home() {
   const socials = [
@@ -15,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="bg-white min-h-screen text-gray-900 font-sans">
-      <div className="mx-auto max-w-2xl pt-24 px-8 pb-20">
+      <div className="mx-auto max-w-4xl pt-24 px-8 pb-20">
 
         {/* Avatar and Name */}
         <div className="flex flex-col gap-4 mb-5">
@@ -33,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Intro */}
-        <p className="text-sm text-gray-500 mb-3">
+        <p className="text-[14px] text-gray-500 mb-3">
           Building simple software, usually.
         </p>
 
@@ -53,6 +54,22 @@ export default function Home() {
             </a>
           ))}
         </div>
+
+        {/* GitHub Calendar Section */}
+<div className="mb-6 font-light pb-2">
+  <GitHubCalendar 
+    username="bidhandhakal"
+    blockSize={11}
+    blockMargin={3}
+    blockRadius={4}
+    fontSize={12}
+    colorScheme="light"
+    theme={{
+      light: ['#e8e8e8', '#b0b0b0', '#787878', '#484848', '#1a1a1a'],
+      dark: ['#e8e8e8', '#b0b0b0', '#787878', '#484848', '#1a1a1a']
+    }}
+  />
+</div>
 
         {/* Divider */}
         <div className="border-t border-gray-100 my-6" />
