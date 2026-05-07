@@ -128,3 +128,21 @@
     @apply font-sans;
   }
 }
+@layer base {
+  ::selection {
+    @apply bg-gray-200 text-gray-900;
+  }
+
+  ::-moz-selection {
+    @apply bg-gray-200 text-gray-900;
+  }
+
+  /* dark mode */
+  .dark ::selection {
+    @apply bg-gray-500 text-gray-100;
+  }
+
+  .dark ::-moz-selection {
+    @apply bg-gray-500 text-gray-100;
+  }
+}
