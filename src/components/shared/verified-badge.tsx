@@ -13,26 +13,16 @@ export default function VerifiedBadge() {
       <Tooltip>
         <TooltipTrigger asChild>
           <span
-            aria-label="Grafana"
+            aria-label="Meow"
             role="img"
-            className="inline-block w-5 h-5"
+            className="inline-block w-5 h-5 bg-center bg-no-repeat bg-contain"
             style={{
-              backgroundColor: "#2B7FFF",
-              WebkitMaskImage:
-                "url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-plain.svg)",
-              maskImage:
-                "url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-plain.svg)",
-              WebkitMaskRepeat: "no-repeat",
-              maskRepeat: "no-repeat",
-              WebkitMaskPosition: "center",
-              maskPosition: "center",
-              WebkitMaskSize: "contain",
-              maskSize: "contain",
+              backgroundImage: "url(/meow.png)",
             }}
           />
         </TooltipTrigger>
         <TooltipContent side="top" sideOffset={8}>
-          Blue is the color I see most clearly.
+          Meow.
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
