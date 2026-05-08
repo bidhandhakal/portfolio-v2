@@ -11,6 +11,7 @@ export default function Home() {
 
         <Socials />
 
+        <GithubActivity username="bidhandhakal" />
         <Skills />
 
         <div className="border-t border-gray-100 my-6" />
