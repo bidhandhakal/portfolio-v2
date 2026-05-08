@@ -2,6 +2,7 @@ import Hero from "@/components/sections/hero";
 import Socials from "@/components/sections/socials";
 import GithubActivity from "@/components/sections/github-activity";
 import Skills from "@/components/sections/skills";
+import Projects from "@/components/sections/projects";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
 
         <GithubActivity username="bidhandhakal" />
         <Skills />
+        {/* <Projects /> */}
 
         <div className="border-t border-gray-100 my-6" />
 

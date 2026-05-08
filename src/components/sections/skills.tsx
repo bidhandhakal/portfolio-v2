@@ -5,10 +5,7 @@ import { skills } from "@/data/skills";
 export default function Skills() {
   return (
     <section className="mb-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-1">Skills</h2>
-      <p className="text-sm text-gray-500 mb-3">
-        Tools and technologies I use.
-      </p>
+      <h2 className="text-lg font-semibold text-gray-900 mb-3">Skills</h2>
 
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
