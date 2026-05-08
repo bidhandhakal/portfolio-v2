@@ -8,15 +8,15 @@ interface SkillPillProps {
 
 export default function SkillPill({ label, icon }: SkillPillProps) {
   return (
-    <div className="flex items-center gap-1.5 border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors">
+    <div className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-600">
       <Image
         src={icon}
         alt={label}
-        width={13}
-        height={13}
-        className="opacity-100"
+        width={16}
+        height={16}
+        className="opacity-100 grayscale"
       />
-      {label}
+      <span>{label}</span>
     </div>
   );
 }

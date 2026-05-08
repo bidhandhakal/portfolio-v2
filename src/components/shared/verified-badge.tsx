@@ -21,8 +21,9 @@ export default function VerifiedBadge() {
             }}
           />
         </TooltipTrigger>
-        <TooltipContent side="top" sideOffset={8}>
-          Meow.
+        <TooltipContent side="top" sideOffset={0}>
+          Meow. Not finished yet, and I’m color blind, so it’s black and white
+          for now.
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
