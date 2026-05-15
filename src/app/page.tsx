@@ -14,7 +14,7 @@ export default function Home() {
 
         <GithubActivity username="bidhandhakal" />
         <Skills />
-        {/* <Projects /> */}
+        {/* <Projects  /> */}
 
         <div className="border-t border-gray-100 my-6" />
 
