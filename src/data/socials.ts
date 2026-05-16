@@ -1,5 +1,5 @@
 import { FaGithub, FaInstagram } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
+import { FiGithub, FiMail } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const socials = [
@@ -11,7 +11,7 @@ export const socials = [
 
   {
     href: "https://github.com/bidhandhakal",
-    icon: FaGithub,
+    icon: FiGithub,
     label: "GitHub",
   },
 
